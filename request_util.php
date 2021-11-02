@@ -27,6 +27,11 @@ function r($key, $trim=true)
     return $data;
 }
 
+function get_current_url_file()
+{
+    return explode("?", end(explode("/", $_SERVER['REQUEST_URI'])))[0];
+}
+
 function send_get_request($url)
 {
     $curl = curl_init();
