@@ -29,6 +29,11 @@ catch(PDOException $e)
     die(json_encode($data));
 }
 
+function redirect($page)
+{
+    header("Location: ".$page);
+}
+
 function print_json($data)
 {
     echo json_encode($data);
