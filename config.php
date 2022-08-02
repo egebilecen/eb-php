@@ -29,25 +29,4 @@ catch(PDOException $e)
     die(json_encode($data));
 }
 
-function redirect($page)
-{
-    header("Location: ".$page);
-}
-
-function print_json($data)
-{
-    echo json_encode($data);
-}
-
-function return_json($data)
-{
-    die(print_json($data));
-}
-
-function debug_var($var)
-{
-    var_dump($var);
-    die();
-}
-
 ?>
