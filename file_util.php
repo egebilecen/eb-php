@@ -11,4 +11,9 @@ function write_to_file($file, $content, $mode="a")
     return 1;
 }
 
+function write_log($file, $severity, $text)
+{
+    WriteToFile($file, "[".date("Y-m-d H:i:s")."][".$severity."] ".$text."\n");
+}
+
 ?>
