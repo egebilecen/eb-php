@@ -42,6 +42,11 @@ function send_get_request($url)
 
     curl_setopt($curl, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36");
     curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+    
+    curl_setopt($curl, CURLOPT_HTTPHEADER, [
+        "Accept-Encoding: deflate, gzip"
+    ]);
+    curl_setopt($curl, CURLOPT_ENCODING, "");
 
     $data = curl_exec($curl);
     $status_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
@@ -61,6 +66,11 @@ function send_post_request($url, $post_data)
 
     curl_setopt($curl, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36");
     curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+    
+    curl_setopt($curl, CURLOPT_HTTPHEADER, [
+        "Accept-Encoding: deflate, gzip"
+    ]);
+    curl_setopt($curl, CURLOPT_ENCODING, "");
 
     $data = curl_exec($curl);
     $status_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
