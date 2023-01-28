@@ -21,7 +21,7 @@ catch(PDOException $e)
     die(json_encode([
         "code" => -1,
         "data" => array(),
-        "message" => "Cannot connect to database!"
+        "message" => "Couldn't connect to the database."
     ]));
 }
 
