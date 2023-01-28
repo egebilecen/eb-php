@@ -15,20 +15,14 @@ try
     $db = new PDO("mysql:host=".$db_host.";dbname=".$db_name.";", $db_user, $db_pass);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     // $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false); // fix int being returned as string
-	
-    ## CHARSET ##
-    $db->query("SET NAMES utf8");
-    $db->query("SET CHARACTER SET utf8");
 }
 catch(PDOException $e)
 {
-    $data = [
+    die(json_encode([
         "code" => -1,
         "data" => array(),
-        "text" => "Cannot connect to database!"
-    ];
-
-    die(json_encode($data));
+        "message" => "Cannot connect to database!"
+    ]));
 }
 
 ?>
