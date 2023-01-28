@@ -7,7 +7,7 @@ function js_redirect_to($url, $delay_ms=0)
     $path = implode("/", $path);
 
     echo "<script>setTimeout(function(){window.location='".$path."/".$url."'}, ".$delay.");</script>";
-    die();
+    exit();
 }
 
 function js_redirect_back($delay_ms = null)
@@ -21,7 +21,7 @@ function js_redirect_back($delay_ms = null)
             },'; echo $delay_ms; echo ');
         </script>
     ';
-    die();
+    exit();
 }
 
 function js_alert($str)
