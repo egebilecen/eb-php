@@ -1,6 +1,6 @@
 <?php
 
-function format_mysql_date($date)
+function format_as_mysql_date($date)
 {
     $formatted_str = "";
     $date_split    = explode(" ", $date);
@@ -14,7 +14,7 @@ function format_mysql_date($date)
     return $formatted_str;
 }
 
-function format_mysql_date_without_hour($date)
+function format_as_mysql_date_without_hour($date)
 {
     $formatted_str = "";
     $date_split    = explode(" ", $date);
@@ -28,6 +28,7 @@ function format_mysql_date_without_hour($date)
 function redirect($page)
 {
     header("Location: ".$page);
+    exit();
 }
 
 function print_json($data)
@@ -43,7 +44,7 @@ function return_json($data)
 function debug_var($var)
 {
     var_dump($var);
-    die();
+    exit();
 }
 
 ?>
