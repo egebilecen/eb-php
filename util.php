@@ -1,6 +1,6 @@
 <?php
 
-function format_as_mysql_date($date)
+function format_date_from_mysql_date($date)
 {
     $formatted_str = "";
     $date_split    = explode(" ", $date);
@@ -14,7 +14,7 @@ function format_as_mysql_date($date)
     return $formatted_str;
 }
 
-function format_as_mysql_date_without_hour($date)
+function format_date_from_mysql_date_without_hour($date)
 {
     $formatted_str = "";
     $date_split    = explode(" ", $date);
