@@ -27,6 +27,17 @@ function r($key, $trim=true)
     return $data;
 }
 
+function check_https()
+{
+    if (
+        $_SERVER["SERVER_NAME"] != "localhost"
+        && !isset($_SERVER["HTTPS"])
+    ) {
+        header("HTTP/1.0 403 Forbidden");
+        exit();
+    }
+}
+
 function get_current_url_file()
 {
     return explode("?", end(explode("/", $_SERVER['REQUEST_URI'])))[0];
