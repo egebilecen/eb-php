@@ -25,4 +25,6 @@ catch(PDOException $e)
     ]));
 }
 
+define("SITE_BASE_URL", "//" . $_SERVER["HTTP_HOST"] . dirname($_SERVER["SCRIPT_NAME"]) . "/");
+
 ?>
