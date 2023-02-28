@@ -6,7 +6,7 @@ function js_redirect_to($url, $delay_ms=0)
     unset($path[count($path) - 1]);
     $path = implode("/", $path);
 
-    echo "<script>setTimeout(function(){window.location='".$path."/".$url."'}, ".$delay.");</script>";
+    echo "<script>setTimeout(function(){window.location='".$path."/".$url."'}, ".$delay_ms.");</script>";
     exit();
 }
 
